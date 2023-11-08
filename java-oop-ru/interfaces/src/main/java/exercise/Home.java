@@ -14,6 +14,6 @@ public interface Home {
      * текущего объекта больше площади переданного; -1, если площадь текущего
      * объекта меньше площади переданного и 0, если площади равны.
      */
-    double compareTo(Home another);
+    int compareTo(Home another);
 }
 // END

@@ -17,8 +17,8 @@ public class Cottage implements Home {
     }
 
     @Override
-    public double compareTo(Home another) {
-        return this.getArea() - another.getArea();
+    public int compareTo(Home another) {
+        return (int) (this.getArea() - another.getArea());
     }
 
     @Override
