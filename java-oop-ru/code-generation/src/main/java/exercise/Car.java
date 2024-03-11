@@ -3,7 +3,6 @@ package exercise;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.SneakyThrows;
-import lombok.Value;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 // BEGIN
