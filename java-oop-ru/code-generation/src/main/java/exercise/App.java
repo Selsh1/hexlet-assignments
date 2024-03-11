@@ -1,21 +1,30 @@
 package exercise;
 
-import lombok.SneakyThrows;
-
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Files;
 
 // BEGIN
 class App {
-    @SneakyThrows
     static void save(Path path, Car car) {
-        Files.write(path, car.serialize().getBytes(StandardCharsets.UTF_8));
+        try {
+            Files.write(path, car.serialize().getBytes(StandardCharsets.UTF_8));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    @SneakyThrows
     static Car extract(Path path) {
-        return Car.unserialize(Files.readString(path));
+        Car car;
+
+        try {
+            car = Car.unserialize(Files.readString(path));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return car;
     }
 }
 // END
